@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 
 import 'forgot_password_screen.dart';
+import 'chat_screen.dart';
 import 'signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -88,6 +89,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Logging in...')),
                         );
+                         Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  ChatScreen(),
+                          ),
+                          (Route<dynamic> route) => false,
+                        
+                        );
+                        
                       }
                     },
                     child: const Text('Login'),
